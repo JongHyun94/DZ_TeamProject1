@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>팔방 상세페이지1</title>
+	<link rel="stylesheet" href="common/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="common/css/main_4989.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script src="common/jquery/jquery-3.5.1.min.js"></script>
+	<script src="common/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+	<script src="common/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+
+	<style>
+		.palbang_detail_main {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.palbang_detail_edit {
+			display: flex;
+			flex-direction: row;
+			width: 50%;
+			justify-content: flex-end;
+		}
+
+		.palbang_detail_edit_update {
+			margin: 4px;
+			font-size: 1.2em;
+			color: black;
+		}
+
+		.palbang_detail_edit_delete {
+			margin: 4px;
+			font-size: 1.2em;
+			color: crimson;
+		}
+
+		.palbang_detail_header {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			width: 50%;
+
+		}
+
+		.palbang_detail_header_1 {
+			flex-grow: 8;
+			text-align: left;
+		}
+
+		.palbang_detail_header_2 {
+			flex-grow: 4;
+			text-align: end;
+		}
+
+		.palbang_detail_content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.palbang_detail_content_mainImg {
+			margin: 10px;
+			width: 800px;
+		}
+
+		.palbang_detail_content_space {
+			display: flex;
+			flex-direction: row;
+			margin: 10px;
+			width: 800px;
+		}
+
+		.palbang_detail_content_space_img {
+			text-align: center;
+			width: 400px;
+		}
+
+		.palbang_detail_content_space_txt {
+			margin: 10px;
+		}
+
+		.palbang_detail_content_space_txt>p {
+			width: 400px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<!-- 헤더 부분  -->
+	<div class="header">
+		<div class="header_logo">
+			<a class="logo"> 사방 팔방 </a>
+
+		</div>
+		<div class="header_menu">
+			<a class="header_menu_item"> 사방</a> <a class="header_menu_item">
+				팔방</a>
+		</div>
+
+		<div class="header_search">
+			<input type="text" class="header_search_input input-group mb-3 mt-5 form-control rounded-pill"
+				style="background-color: #e9ecef;" placeholder="             내 예산에 맞는 방 찾기">
+		</div>
+
+
+		<div class="header_cart">
+
+			<img src="common/images/trolley.png" height="30px" />
+
+		</div>
+
+		<div class="header_logIn">
+			<a class="header_logIn_item"> 로그인 </a> <a class="header_logIn_item">
+				회원가입 </a>
+		</div>
+	</div>
+
+	<hr>
+
+	<!-- 팔방 상세 페이지  -->
+
+	<div class="palbang_detail_main">
+		<div class="palbang_detail_edit">
+			<img src="common/images/heart.png">
+			<a class="palbang_detail_edit_update">수정</a>
+			<a class="palbang_detail_edit_delete">삭제</a>
+
+		</div>
+
+		<div class="palbang_detail_header">
+			<div class="palbang_detail_header_1">
+				<h4>낡은 원룸이 아지트로 | 3가지만 기억하세요!</h4>
+			</div>
+			<div class="palbang_detail_header_2">
+				<h6>해바라기님의 방</h6>
+			</div>
+
+		</div>
+		<div class="palbang_detail_content">
+
+			<div class="palbang_detail_content_mainImg">
+				<img src="common/images/palbang_detail_1.jpg">
+			</div>
+			<!-- 1번 상세 -->
+			<div class="palbang_detail_content_space">
+
+				<div class="palbang_detail_content_space_img">
+					<img src="common/images/palbang_detail_1_1.jpg">
+				</div>
+
+				<div class="palbang_detail_content_space_txt">
+					<p>
+						기본 옵션으로 있는 옷장은 고정되어 있어서
+						공간이 제한적이었어요.
+					</p>
+					<p>
+						처음에는 침대를 베란다 쪽으로 붙여서 활용할 수 있는 공간을 최대한으로 하기로 했어요.
+					</p>
+					<p>
+						원형 테이블을 여기저기 놓아가며 남는 공간을 쓸 수 있어 좋았어요.
+					</p>
+
+				</div>
+
+			</div>
+			<!-- 2번 상세 -->
+			<div class="palbang_detail_content_space">
+
+				<div class="palbang_detail_content_space_img">
+					<img src="common/images/palbang_detail_1_2.jpg">
+				</div>
+
+				<div class="palbang_detail_content_space_txt">
+					<p>
+						메트리스는 기본으로 흰색이다 보니
+						깔끔하게 어울리는 남색 계열의
+						침대를 선택했어요 .
+					</p>
+					<p>
+						단색이 주는 안정감이 좋답니다.
+					</p>
+
+				</div>
+
+			</div>
+			<!-- 3번 상세 -->
+			<div class="palbang_detail_content_space">
+
+				<div class="palbang_detail_content_space_img">
+					<img src="common/images/palbang_detail_1_3.jpg">
+				</div>
+
+				<div class="palbang_detail_content_space_txt">
+					<p>
+						글라돔은 트레이를 빼서 쟁반으로 사용할 수 있어서 좋았어요.
+					</p>
+					<p>
+						할 말이 없네요..
+					</p>
+					<p>
+						원형 테이블을 여기저기 놓아가며 남는 공간을 쓸 수 있어 좋았어요.
+					</p>
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- 풋터 -->
+	<footer>
+		<div class="footer_top">
+			<div class="footer_name">
+				<h3>사방팔방 이야기</h3>
+			</div>
+			<div class="footer_sns">
+				<a class="footer_icon" href="https://www.instagram.com/"> <img src="common/images/instagram.png"
+						width="30" height="30" />
+				</a> <a class="footer_icon" href="https://www.facebook.com/"> <img src="common/images/facebook.png"
+						width="30" height="30" />
+				</a>
+			</div>
+		</div>
+
+		<hr />
+		<div class="footer_info">
+			<table>
+				<tbody>
+					<tr>
+						<td>상호명:</td>
+						<td colspan="3">사방팔방</td>
+					</tr>
+					<tr>
+						<td>문의하기:</td>
+						<td>2조</td>
+						<td>이종현</td>
+						<td>조민상</td>
+						<td>이채정</td>
+					</tr>
+					<tr>
+						<td>주소:</td>
+						<td colspan="3">서울특별시 송파구 중대로 135, 서관12층</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p class="footer_copyright">Copyright Ⓒ 2021 4bang8bang. All
+			rights reserved</p>
+	</footer>
+</body>
+
+</html>

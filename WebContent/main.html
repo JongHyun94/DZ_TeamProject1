@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>메인페이지</title>
+	<link rel="stylesheet" href="common/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="common/css/main_4989.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script src="common/jquery/jquery-3.5.1.min.js"></script>
+	<script src="common/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+	<script src="common/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+
+	<style>
+		.main_main{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.main_advertise{
+			
+		}
+		.main_sabang_title{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding-top: 20px;	
+		}
+		.main_sabang_title_name{
+			flex-grow: 11;
+		}
+		.main_sabang_title_more{
+			flex-grow: 1;
+			color:cornflowerblue
+		}
+		.main_palbang_title{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding-top: 20px;
+		}
+		.main_palbang_title_name{
+			flex-grow: 11;
+		}
+		.main_palbang_title_more{
+			flex-grow: 1;
+			color:cornflowerblue
+		}
+		.main_sabang_content{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			padding: 10px 0 10px 0;
+			margin: 10px 0 10px 0;
+			text-align: center;
+		}
+		.main_palbang_content{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			padding: 10px 0 10px 0;
+			margin: 10px 0 10px 0;
+			text-align: center;
+		}
+		.main_sabang_content_1{
+			padding: 10px 10px 10px 0;
+			margin: 10px 10px 10px 0;
+		}
+		.main_sabang_content_2{
+			padding: 10px 10px 10px 10px;
+			margin: 10px 10px 10px 10px;
+		}
+		.main_sabang_content_3{
+			padding: 10px 0px 10px 10px;
+			margin: 10px 0px 10px 10px;
+		}
+		.main_palbang_content_1{
+			padding: 10px 10px 10px 0;
+			margin: 10px 10px 10px 0;
+		}
+		.main_palbang_content_2{
+			padding: 10px 10px 10px 10px;
+			margin: 10px 10px 10px 10px;
+		}
+		.main_palbang_content_3{
+			padding: 10px 0px 10px 10px;
+			margin: 10px 0px 10px 10px;
+		}
+		.main_sabang_title_name{
+
+		}
+	</style>
+
+</head>
+
+<body>
+	<!-- 헤더 부분  -->
+	<div class="header">
+		<div class="header_logo">
+			<a class="logo"> 사방 팔방 </a>
+
+		</div>
+		<div class="header_menu">
+			<a class="header_menu_item"> 사방</a> <a class="header_menu_item">
+				팔방</a>
+		</div>
+
+		<div class="header_search">
+			<input type="text" class="header_search_input input-group mb-3 mt-5 form-control rounded-pill"
+				style="background-color: #e9ecef;" placeholder="             내 예산에 맞는 방 찾기">
+		</div>
+
+
+		<div class="header_cart">
+
+			<img src="common/images/trolley.png" height="30px" />
+
+		</div>
+
+		<div class="header_logIn">
+			<a class="header_logIn_item"> 로그인 </a> <a class="header_logIn_item">
+				회원가입 </a>
+		</div>
+	</div>
+
+	<hr>
+
+	<!-- 메인 상세 페이지  -->
+
+	<div class="main_main">
+		<!-- 광고  -->
+		<div class="main_advertise">
+			<img src="common/images/main_ad_2.png"/> 
+
+		</div>
+		<!-- 사방 -->
+		<div class="main_sabang">
+			<div class="main_sabang_title">
+				<div class="main_sabang_title_name">
+					<h4>사방</h4>
+					<h6>모든 스타일과 예산에 맞는 방을 구경해보세요.</h6>
+				</div>
+				<div class="main_sabang_title_more">
+					<a>더보기</a>
+				</div>
+			</div>
+			<div class="main_sabang_content">
+				<div class="main_sabang_content_1">
+					<div class="main_sabang_content_1_img">
+						<img src="common/images/main_sb_1.png">
+					</div>
+					<div class="main_sabang_content_1_detail">
+						<p>세련된 스튜디오 같은 방</p>
+					</div>
+				</div>
+				<div class="main_sabang_content_2">
+					<div class="main_sabang_content_2_img">
+						<img src="common/images/main_sb_2.png">
+					</div>
+					<div class="main_sabang_content_2_detail">
+						<p>책 읽고 싶게 만드는 방</p>
+					</div>
+				</div>
+				<div class="main_sabang_content_3">
+					<div class="main_sabang_content_3_img">
+						<img src="common/images/main_sb_3.png">
+					</div>
+					<div class="main_sabang_content_3_detail">
+						<p>우드톤 가구를 활용한 방</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- 팔방 -->
+		<div class="main_palbang">
+			<div class="main_palbang_title">
+				<div class="main_palbang_title_name">
+					<h4>팔방</h4>
+					<h6>나의 방을 공유해보고, 다른 사람들의 방을 구경해보세요.</h6>
+				</div>
+				<div class="main_palbang_title_more">
+					<a>더보기</a>
+				</div>
+			</div>
+			<div class="main_palbang_content">
+				<div class="main_sabang_content_1">
+					<img src="common/images/main_pb_1.png">
+				</div>
+				<div class="main_sabang_content_2">
+					<img src="common/images/main_pb_2.png">
+				</div>
+				<div class="main_sabang_content_3">
+					<img src="common/images/main_pb_3.png">
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+
+	<!-- 풋터 -->
+	<footer>
+		<div class="footer_top">
+			<div class="footer_name">
+				<h3>사방팔방 이야기</h3>
+			</div>
+			<div class="footer_sns">
+				<a class="footer_icon" href="https://www.instagram.com/"> <img src="common/images/instagram.png"
+						width="30" height="30" />
+				</a> <a class="footer_icon" href="https://www.facebook.com/"> <img src="common/images/facebook.png"
+						width="30" height="30" />
+				</a>
+			</div>
+		</div>
+
+		<hr />
+		<div class="footer_info">
+			<table>
+				<tbody>
+					<tr>
+						<td>상호명:</td>
+						<td colspan="3">사방팔방</td>
+					</tr>
+					<tr>
+						<td>문의하기:</td>
+						<td>2조</td>
+						<td>이종현</td>
+						<td>조민상</td>
+						<td>이채정</td>
+					</tr>
+					<tr>
+						<td>주소:</td>
+						<td colspan="3">서울특별시 송파구 중대로 135, 서관12층</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p class="footer_copyright">Copyright Ⓒ 2021 4bang8bang. All
+			rights reserved</p>
+	</footer>
+</body>
+
+</html>
