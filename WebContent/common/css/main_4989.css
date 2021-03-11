@@ -2,46 +2,84 @@
 
 /* font style */
 @font-face {
-	src: url("../font/Wemakeprice-Regular.ttf");
-	font-family: "wema";
+    font-family: 'Wemakeprice-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 /* 전체 스타일 폰트 */
 * {
-	font-family: "wema";
+	font-family: "Wemakeprice-Regular";
 }
 
 /* header css */
-.header_search_input{
-       	padding: 50px;
+
+
+.header_search {
+   width: 700px;
+}
+
+.header_search_input {
+          
+      
         background-image : url('../images/search.png'); 
         background-position: 18px 12px; 
-       	background-size: 15px 15px;
+          background-size: 15px 15px;
         background-repeat:no-repeat;      
  }
 
 .header {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
 }
 
 .logo {
-	font-size: 3em;
+   font-size: 3em;
+   text-decoration: none;
+   color: black;
 }
 
-.header_menu {
-	
-}
+
 
 .header_menu_item {
-	font-size: 1.7em;
-	padding: 20px;
+   text-decoration: none;
+   font-size: 1.5em;
+   padding: 15px;
+   color: black;
 }
 
+
+.header_logo{
+   
+   margin-top: 30px;
+   margin-left: 70px;
+}
+
+.header_menu{
+   
+   margin-top: 30px;
+   
+}
+
+
+.header_cart{
+   
+   
+   margin-top: 30px;
+   
+}
+
+.header_logIn {
+   margin-right: 80px;
+   margin-top: 30px;
+}
 .header_logIn_item {
-	font-size: 1.4em;
-	padding: 20px;
+   text-decoration: none;
+   font-size: 1.2em;
+   padding: 14px;
+   color: black;
 }
 /* info css */
 .info_content {
