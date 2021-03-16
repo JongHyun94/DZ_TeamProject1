@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My page 주문내역</title>
+        <link rel="stylesheet" href="common/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="common/css/main_4989.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <script src="common/jquery/jquery-3.5.1.min.js"></script>
+        <script src="common/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="common/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <style>
+        /* 마이페이지 헤더 */
+         .mypage_header{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-size: 1.4em;
+            border-bottom: 0.5px solid grey;
+            margin-bottom: 1%;
+        }
+
+        /* 마이페이지 헤더 메뉴 간격  */
+        .member_info{
+            margin-left: 14%;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* 마이페이지 헤더 메뉴 속성 간 간격 */
+        .mypage_header > a {
+            padding: 10px;
+            margin-right: 12%;
+            
+        }
+        /* 마이페이지 "주문 내역" 속성*/
+        .order_info{
+            text-decoration: none;
+            color: #00B0F0 !important;
+        }
+
+        /* 기간 버튼 */
+        .state_button {
+            margin-left: 12%;
+        }
+        /* 배송상태 버튼 */
+        .order-header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 1.5%;
+            font-size: 20px;
+        }
+
+        /* "송장번호 주문날짜"span 간격 */
+        .order-header1{
+            margin-left: 3%;
+        }
+        /* 송장번호  간격 */
+        .order-header1_2{
+           margin-left: 20px;
+        }
+        /* 주문날짜 간격 */
+        .order-header2{
+            margin-left: 4%;
+        }
+
+
+        
+        .order-list{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20%;
+           
+        }
+
+        .order-list_1{
+            margin-top: 6%;
+            margin-left: 13%;
+        }
+        .order-list_1 > span{
+            font-size: 14px;
+        }
+        .order-list_2{
+            margin-top: 4%;
+            margin-left: 7%;
+        }
+
+        .order-list_3{
+            display: flex;
+            flex-direction: column;
+            margin-top: 5%;
+            margin-left: 8%;
+        }
+       
+        .order-list_3_2{
+            
+            font-size: 11px;
+        }
+
+        .order-list_4{
+            margin-top: 5%;
+            margin-left: 11%;
+        }
+
+        .order-list_5{
+            margin-top: 5%;
+            margin-left: 17%;
+            margin-right: 8%;
+        }
+        a:hover{
+	color: black;
+}
+    </style>
+<script>
+    const init = () => {
+          $.ajax({url:"header.html"})
+          .done((data) => {
+             const content = $("#header");
+             content.html(data);
+          }).fail((error) => { 
+              console.log("에러발생");
+              console.log(error);
+             });
+
+          $.ajax({url:"footer.html"})
+          .done((data) => {
+             const content = $("#footer");
+             content.html(data);
+          }).fail((error) => { 
+              console.log("에러발생");
+              console.log(error);
+             });
+
+      };
+</script>
+    
+</head>
+<body onload="init()">
+	<!-- 헤더부분 -->
+	<div id="header"></div>
+
+         <!-- 마이페이지 메뉴 헤더 -->
+         <div class="mypage_header">
+            <a class="member_info" href="#" onclick="location.href='mypage_memberInformation.html'">회원 정보</a>
+            <a class="order_info" href="#" onclick="location.href='mypage_orderlist.html'">주문 내역</a>
+            <a class="inquiry_info" href="#" onclick="location.href='mypage_inquiry.html'" style="color: black;">내가 쓴 문의글</a>
+
+        </div>
+
+
+         <!-- 마이페이지 주문 내역 -->
+
+        <div class="state_button">
+            <select name="time_button">
+                <option selected="" value="" disabled="">기간</option>
+                <option value="오래된 순">오래된 순</option>
+                <option value="최신 순">최신 순</option>
+            </select>
+            <select name="order_button">
+                <option selected="" value="" disabled="">배송상태</option>
+                <option value="오래된 순">배송 준비 중</option>
+                <option value="최신 순">배송 중</option>
+                <option value="최신 순">배송 완료</option>
+            </select>
+        </div>
+
+        <div class="order-header">
+            <div class="order-header1">
+                <span class="order-header1_1">송장번호</span>
+                <span class="order-header1_2">주문날짜</span></div>
+            <div class="order-header2">상품명</div>
+            <div class="order-header3">가격</div>
+            <div class="order-header3">배송상태</div>
+        </div>
+
+        <div class="order-list">
+            <div class="order-list_1">
+                <span>4433514 </span>
+                <span> | </span>
+                <span> 2021.03.11</span>
+            </div>
+            <div class="order-list_2">
+                <img src="common/images/sb1_0.png" width="100">
+            </div>
+            <div class="order-list_3">
+                <span class="order-list_3_1">아늑하고 따뜻한 방</span>
+                <span class="order-list_3_2">(스카르스타, 크란스크라게, 글라돔, 테르티알)</span>
+            </div>
+            <div class="order-list_4">W 350,000</div>
+            <div class="order-list_5">배송 준비 중</div>
+
+        </div>
+
+
+
+
+<!-- 풋터부분 -->
+<div id="footer"></div>
+
+
+</body>
+</html>

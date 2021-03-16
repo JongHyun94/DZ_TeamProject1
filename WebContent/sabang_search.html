@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사방 예산 검색 페이지</title>
+<style>
+    .sabang_main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    } 
+    .div1_img{
+        width: 100%;
+    }
+
+	.sort_type{
+        display: flex;
+        flex-direction: row;
+    }
+    .sort_type > .menu{
+        margin-left: 5em;
+        margin-right: 1.2em;
+        margin-top: 2em;
+        
+    }
+    /* 게시물  */
+    .sabang_div3{
+            display: flex;
+            flex-direction: column;
+    }
+
+    .line{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .line_item{
+        margin: 4em;
+    }
+    a:hover{
+	color: black;
+}
+
+    /* price */
+    @font-face {
+    font-family: 'Cafe24Dangdanghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+    .price{
+        font-family: Cafe24Dangdanghae;
+    }
+
+    /* a tag  */
+    a.move:link{
+        color: black;
+        text-decoration:none; 
+    }
+    a.move:visited{
+        color :black;
+        text-decoration:none;
+    }
+    
+    a.move:hover{
+        color :black;
+        text-decoration:none;
+    }
+</style>
+<link rel="stylesheet" href="common/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="common/css/main_4989.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<script src="common/jquery/jquery-3.5.1.min.js"></script>
+<script src="common/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+<script src="common/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script>
+    const init = () => {
+          $.ajax({url:"header_search.html"})
+          .done((data) => {
+             const content = $("#header_search");
+             content.html(data);
+          }).fail((error) => { 
+              console.log("에러발생");
+              console.log(error);
+          });
+
+          $.ajax({url:"footer.html"})
+          .done((data) => {
+             const content = $("#footer");
+             content.html(data);
+          }).fail((error) => { 
+              console.log("에러발생");
+              console.log(error);
+          });
+
+      };
+</script>
+</head>
+<body onload="init()">
+    <div id="header_search"></div>
+    <br/>
+
+     <!-- sabang_main -->
+     <div class="sabang_main">
+        <div class="sabang_div1">
+            <img class="div1_img" src="common/images/sabang_search/slogan_search.png" height="45px">
+        </div>
+        <div class="sabang_div2">
+            <ul class="sort_type">
+                <li class="menu"><a href="" class="move">판매율 순</a></li>
+                <li class="menu"><a href="" class="move" style="color:gray;">낮은 가격 순</a></li>
+                <li class="menu"><a href="" class="move" style="color:gray;">높은 가격 순</a></li>
+                <li class="menu"><a href="" class="move" style="color:gray;">조회수 순</a></li>
+            </ul>
+        </div>
+        <div class="sabang_div3">
+            <div class="line">
+                <div class="line_item" >
+                    <a class="move" href="sabang_detail.html">
+                        <img src="common/images/sabang_search/search_post1.png" height="200"><br/>
+                        조화로운 방<br/>
+                        <span class="price" style="color: gray; font-size: 0.9em; text-decoration-line: line-through;">&#8361; 1,500,000</span><br/>
+                        <span class="price">&#8361; 1,000,000</span>
+                        <span style="color: red;">33%</span>
+                    </a>
+                </div>
+                <div class="line_item" >
+                    <a class="move" href="sabang_detail.html">
+                        <img src="common/images/sabang_search/search_post2.png" height="200"><br/>
+                        온종일 편안하게 꿀잠 방<br/>
+                        <span class="price" style="color: gray; font-size: 0.9em; text-decoration-line: line-through;">&#8361; 1,200,000</span><br/>
+                        <span class="price">&#8361; 980,000</span>
+                        <span style="color: red;">18%</span>
+                    </a>
+                </div>
+                <div class="line_item" >
+                    <a class="move" href="sabang_detail.html">
+                        <img src="common/images/sabang_search/search_post3.png" height="200"><br/>
+                        친환경 내 방<br/>
+                        <span class="price" style="color: gray; font-size: 0.9em; text-decoration-line: line-through;">&#8361; 1,500,000</span><br/>
+                        <span class="price">&#8361; 960,000</span>
+                        <span style="color: red;">36%</span>
+                    </a>
+                </div>
+            </div>
+            <div class="line">
+                <div class="line_item" >
+                    <a class="move" href="sabang_detail.html">
+                        <img src="common/images/sabang_search/search_post4.png" height="200"><br/>
+                        조화로운 방<br/>
+                        <span></span><br/>
+                        <span class="price">&#8361; 900,000</span>
+                    </a>
+                </div>
+                <div class="line_item" >
+                    <a class="move" href="sabang_detail.html">
+                        <img src="common/images/sabang_search/search_post5.png" height="200"><br/>
+                        온종일 편안하게 꿀잠 방<br/>
+                        <span class="price" style="color: gray; font-size: 0.9em; text-decoration-line: line-through;">&#8361; 1,200,000</span><br/>
+                        <span class="price">&#8361; 900,000</span>
+                        <span style="color: red;">25%</span>
+                    </a>
+                </div>
+                <div class="line_item" >
+                    <a class="move" href="sabang_detail.html">
+                        <img src="common/images/sabang_search/search_post6.png" height="200"><br/>
+                        친환경 내 방<br/>
+                        <span></span><br/>
+                        <span class="price">&#8361; 1,500,000</span>
+                    </a>
+                </div>
+            </div>
+    </div>
+
+    <div id="footer"></div>
+</body>

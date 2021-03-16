@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+        <link rel="stylesheet" href="common/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="common/css/main_4989.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <script src="common/jquery/jquery-3.5.1.min.js"></script>
+        <script src="common/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="common/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+
+        <script>
+            var closebtns = document.getElementsByClassName("close");
+            var i;
+
+            for (i = 0; i < closebtns.length; i++) {
+            closebtns[i].addEventListener("click", function() {
+                this.parentElement.style.display = 'none';
+            });
+            }
+
+           
+            const init = () => {
+                    $.ajax({url:"header.html"})
+                    .done((data) => {
+                    const content = $("#header");
+                    content.html(data);
+                    }).fail((error) => { 
+                        console.log("에러발생");
+                        console.log(error);
+                    });
+
+                    $.ajax({url:"footer.html"})
+                    .done((data) => {
+                    const content = $("#footer");
+                    content.html(data);
+                    }).fail((error) => { 
+                        console.log("에러발생");
+                        console.log(error);
+                    });
+
+                };
+
+        </script>
+
+        <style>
+            a:hover{
+	color: black;
+}
+            .shop_basket{
+                margin-top: 4%;
+                
+            }
+            .basket_table_header{
+                display: flex;
+                flex-direction: row;
+                justify-content:space-around;
+                border: 1px solid gray;
+                margin-top: 2%;
+                margin-left: 9%;
+                margin-right: 9%;
+            }
+
+            /* 장바구니 타이틀 */
+
+            .title{
+                font-size: 30px;
+                margin-left: 10%;
+            }
+
+            /* 장바구니 테이블 헤더 */
+
+            .table_header1{
+                margin-top: 1%;
+                margin-bottom: 1%;
+                
+            }
+
+            .table_header2{
+                margin-top: 1.4%;
+                margin-bottom: 1%;
+                margin-right: 15%;
+            }
+
+            .table_header3{
+                margin-top: 1%;
+                margin-bottom: 1%;
+                
+            }
+
+            .table_header4{
+                margin-top: 1%;
+                margin-bottom: 1%;
+               
+            }
+
+            .table_header5{
+                margin-top: 1%;
+                margin-bottom: 1%;
+                
+            }
+
+            .table_header6{
+                margin-top: 1%;
+                margin-bottom: 1%;
+                margin-right: 5%;
+            }
+
+            /* 장바구니 테이블 리스트1 */
+
+           .basket_table_list1{
+                display: flex;
+                flex-direction: row;
+                justify-content:space-around;
+                box-sizing: border-box;
+                margin-left: 10.5%;
+                
+                font-size: 0.8em;
+           }
+
+           .table_list1{
+                margin-top: 2.5%;
+                margin-bottom: 1%;
+                box-sizing: border-box;
+            }
+
+            .table_list2{
+                margin-top: 2.8%;
+                margin-bottom: 1%;
+                box-sizing: border-box;
+                margin-left: 2.5%;
+            }
+
+            .table_list3{
+                margin-top: 1%;
+                margin-bottom: 1%;
+                box-sizing: border-box;
+            }
+
+            .table_list4{
+                margin-top: 2.6%;
+                margin-bottom: 1%;
+                box-sizing: border-box;
+                margin-left: 2.5%;
+            }
+
+            .table_list5{
+                box-sizing: border-box;
+                margin-top: 2.1%;
+                margin-bottom: 1%;
+                margin-right: 0.3%;
+            }
+
+            .table_list6{
+                box-sizing: border-box;
+                margin-top: 2.5%;
+                margin-bottom: 1%;
+                margin-right: 0.5%;
+            }
+
+            .table_list7{
+                box-sizing: border-box;
+                margin-top: 2.4%;
+                margin-bottom: 1%;
+                margin-right: 0.2%;
+            }
+
+            .table_list8{
+                margin-top: 2.4%;
+                text-decoration: none;
+                color: black;
+                margin-right: 5%;
+                padding-left: 15px;
+            }
+
+            /* 선택삭제 및 총 가격 */
+
+            .select_cancle_totalPrice{
+                display: flex;
+                flex-direction: row;
+                margin-left: 22%;
+            }
+
+            .select_cancle{
+                margin-top: 35%;
+            }
+            .totalPrice1 {
+                margin-top: 5%;
+                margin-left: 52%;
+                font-size: 1.5em;
+            }
+            .totalPrice2 {
+                margin-top: 5%;
+                margin-left: 13%;
+                font-size: 1.5em;
+            }
+        
+            /* 장바구니 결제버튼*/
+
+            .basket_buy_button{
+                display: block;
+                margin-top: 7%;
+                margin-left: 40%;
+                margin-bottom: 3%;
+            }
+           
+            
+        </style>
+</head>
+<body onload="init()">
+ 	<!-- 헤더부분 -->
+    <div id="header"></div>
+
+    <!-- 장바구니 -->
+    <div class="shop_basket">
+        <div class="title"><strong>장바구니</strong></div>
+        <div class="basket_table_header">
+            
+                <span class="table_header1">번호</span>
+                <input class="table_header2" type="checkbox" name="xxx" value="yyy" checked>
+                <span class="table_header3">상품명</span>
+                <span class="table_header4">수량</span>
+                <span class="table_header5">판매가</span>
+                <span class="table_header6">배송비</span>
+              
+        </div>
+        <div class="basket_table_list1">
+                <span class="table_list1">1</span>
+                <input class="table_list2" type="checkbox" name="xxx" value="yyy" checked>
+                <img class="table_list3" src="common/images/basket_list1.jpg" height="60" width="45">
+                <span class="table_list4">아늑한 분위기의 방</span>
+                <img class="table_list5" src="common/images/sb1_5.png" height="30" width="50" >
+                <span class="table_list6"><text style="font-family: 'Cafe24Dangdanghae';">&#8361;</text> 500,000</span>
+                <span class="table_list7">배송비무료</span>
+                <a class="table_list8" href='javascript:window.close();'>X</a>   
+        </div>
+
+        <div class="basket_table_list1">
+                <span class="table_list1">2</span>
+                <input class="table_list2" type="checkbox" name="xxx" value="yyy" checked>
+                <img class="table_list3" src="common/images/basket_list2.jpg" height="60" width="45">
+                <span class="table_list4">화려한 분위기의 방</span>
+                <img class="table_list5" src="common/images/sb1_5.png" height="30" width="50" >
+                <span class="table_list6"><text style="font-family: 'Cafe24Dangdanghae';">&#8361;</text> 500,000</span>
+                <span class="table_list7">배송비무료</span>
+                <a class="table_list8" href='javascript:window.close();'>X</a>
+        </div>
+
+        </div>
+        
+        <div class="select_cancle_totalPrice">
+            <div class="select_cancle_totalPrice_button"><button type="button" class="btn btn-outline-info">선택 삭제</button></div>
+        
+            <strong class="totalPrice1">총가격</strong >
+            <strong class="totalPrice2"><text style="font-family: 'Cafe24Dangdanghae';">&#8361;</text> 1,000,000</strong >
+            
+        </div>
+
+        <div class="basket_buy_button">
+            <a href="#" onclick="location.href='pay.html'" >
+                <button type="button" class="btn btn-lg btn-info" style="width: 30%; height: 30%; color:white">결제하기</button>
+            </a>
+            
+        </div>
+    </div>
+
+<!-- 풋터부분 -->
+<div id="footer"></div>
+
+</body>
+</html>

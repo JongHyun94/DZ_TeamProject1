@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>팔방 메인 페이지</title>
+<style>
+    .palbang_main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .div1_img{
+        width: 100%;
+    }
+
+	.sort_type{
+        display: flex;
+        flex-direction: row;
+    }
+    .sort_type > .menu{
+        margin-left: 5em;
+        margin-right: 1.2em;
+        margin-top: 2em;
+        
+    }
+
+    /* 게시물  */
+    .palbang_div3_parent{
+        display: flex;
+        justify-content: center;
+    }
+    .palbang_div3{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+    }
+
+    /* 방 자랑하기 버튼  */
+    .div3_btn{
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 2em;
+    }
+    
+    .line{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .line_item{
+        margin: 4em;
+    }
+
+    /* a tag  */
+    a.move:link{
+        color: black;
+        text-decoration:none; 
+    }
+    a.move:visited{
+        color :black;
+        text-decoration:none;
+    }
+    
+    a.move:hover{
+        color :black;
+        text-decoration:none;
+    }
+    a:hover{
+	color: black;
+}
+</style>
+<link rel="stylesheet" href="common/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="common/css/main_4989.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<script src="common/jquery/jquery-3.5.1.min.js"></script>
+<script src="common/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+<script src="common/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script>
+      const init = () => {
+            $.ajax({url:"header.html"})
+            .done((data) => {
+               const content = $("#header");
+               content.html(data);
+            }).fail((error) => { 
+				console.log("에러발생");
+				console.log(error);
+			});
+
+            $.ajax({url:"footer.html"})
+            .done((data) => {
+               const content = $("#footer");
+               content.html(data);
+            }).fail((error) => { 
+				console.log("에러발생");
+				console.log(error);
+			});
+
+        };
+</script>
+</head>
+<body onload="init()">
+    <div id="header"></div>
+    <br/>
+    <!-- palbang_main -->
+    <div class="palbang_main">
+        <div class="palbang_div1"> <!-- 슬로건 -->
+            <img class="div1_img" src="common/images/palbang_post/pal_slogan.png" height="45px">
+        </div>
+        <div class="palbang_div2"> <!-- 정렬 카테고리 -->
+            <ul class="sort_type">
+                <li class="menu"><a href="" >좋아요 순</a></li>
+                <li class="menu"><a href="" style="color:gray;">조회수 순</a></li>
+                <li class="menu"><a href="" style="color:gray;">등록일 순</a></li>
+                <li class="menu"><a href="" style="color:gray;">오래된 순</a></li>
+            </ul>
+        </div>
+        <div class="palbang_div3_parent">
+        <div class="palbang_div3"> <!--방자랑하기 버튼과 아래 게시물-->
+            <div class="div3_btn">
+                <a href="#" onclick="location.href='palbang_create.html'">
+                    <button type="button" class="div3_btn btn" style="background-color: #00B0F0; color: white;">방 자랑하기</button>
+                </a>
+               
+            </div>
+                
+            <div class="line"> <!-- 게시물 첫번째 행 , 게시물 3개 포함 -->
+                <div class="line_item"> <!-- 하나의 게시물 -->
+                    <a class="move" href="palbang_detail.html">
+                        <img src="common/images/palbang_post/pal_post1.png" height="200"><br/>
+                        <div style="font-size: 1.3em;">크리스마스 느낌나는 내 방</div>
+                        <div style="font-size: 1em;">산타클로스</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: red;">
+                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                        </svg> 45
+                    </a>
+                </div>
+                <div class="line_item"> 
+                    <a class="move" href="palbang_detail.html"></a>
+                        <img src="common/images/palbang_post/pal_post2.png" height="200"><br/>
+                        <div style="font-size: 1.3em;">커피 한 잔의 여유가 흘러넘치는 방</div>
+                        <div style="font-size: 1em;">방구석오뎅</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: red;">
+                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                        </svg> 32
+                    </a>
+                </div>
+                <div class="line_item">
+                    <a class="move" href="palbang_detail.html">
+                        <img src="common/images/palbang_post/pal_post3.png" height="200"><br/>
+                        <div style="font-size: 1.3em;">2층침대의 로망은 로망일뿐이다.</div>
+                        <div style="font-size: 1em;">이웃집동생</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: red;">
+                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                        </svg>30
+                    </a>
+                </div>   
+            </div>
+            <div class="line"> <!-- 게시물 두 번째 행 , 게시물 3개 포함 -->
+                <div class="line_item" >
+                    <a class="move" href="palbang_detail.html">
+                        <img src="common/images/palbang_post/pal_post4.png" height="200"><br/>
+                        <div style="font-size: 1.3em;">소품으로 내 방 꾸미기</div>
+                        <div style="font-size: 1em;">빈털터리</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: red;">
+                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                        </svg> 45
+                    </a>
+                </div>
+                <div class="line_item">
+                    <a class="move" href="palbang_detail.html">
+                        <img src="common/images/palbang_post/pal_post5.png" height="200"><br/>
+                        <div style="font-size: 1.3em;">아침엔 브런치가 땡기는 방</div>
+                        <div style="font-size: 1em;">늦잠꾸러기</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: red;">
+                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                        </svg> 32
+                    </a>
+                </div>
+                <div class="line_item">
+                    <a class="move" href="palbang_detail.html">
+                        <img src="common/images/palbang_post/pal_post6.png" height="200"><br/>
+                        <div style="font-size: 1.3em;">깔끔해서 청소하고 싶은 내 방</div>
+                        <div style="font-size: 1em;">청개구리</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: red;">
+                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                        </svg> 30
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>

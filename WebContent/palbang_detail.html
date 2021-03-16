@@ -13,6 +13,9 @@
 	<script src="common/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
 
 	<style>
+		#heart_img{
+			object-fit: contain;
+		}
 		.palbang_detail_main {
 			display: flex;
 			flex-direction: column;
@@ -23,8 +26,9 @@
 		.palbang_detail_edit {
 			display: flex;
 			flex-direction: row;
-			width: 50%;
+			width: 800px;
 			justify-content: flex-end;
+			margin: 4px;
 		}
 
 		.palbang_detail_edit_update {
@@ -43,7 +47,7 @@
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			width: 50%;
+			width: 800px;
 
 		}
 
@@ -73,6 +77,8 @@
 			flex-direction: row;
 			margin: 10px;
 			width: 800px;
+			padding-top: 10px;
+			padding-bottom: 10px;
 		}
 
 		.palbang_detail_content_space_img {
@@ -87,49 +93,48 @@
 		.palbang_detail_content_space_txt>p {
 			width: 400px;
 		}
+		a:hover{
+	color: black;
+}
 	</style>
+<script>
+	const init = () => {
+		  $.ajax({url:"header.html"})
+		  .done((data) => {
+			 const content = $("#header");
+			 content.html(data);
+		  }).fail((error) => { 
+			  console.log("에러발생");
+			  console.log(error);
+			 });
 
+		  $.ajax({url:"footer.html"})
+		  .done((data) => {
+			 const content = $("#footer");
+			 content.html(data);
+		  }).fail((error) => { 
+			  console.log("에러발생");
+			  console.log(error);
+			 });
+
+	  };
+</script>
 </head>
 
-<body>
-	<!-- 헤더 부분  -->
-	<div class="header">
-		<div class="header_logo">
-			<a class="logo"> 사방 팔방 </a>
-
-		</div>
-		<div class="header_menu">
-			<a class="header_menu_item"> 사방</a> <a class="header_menu_item">
-				팔방</a>
-		</div>
-
-		<div class="header_search">
-			<input type="text" class="header_search_input input-group mb-3 mt-5 form-control rounded-pill"
-				style="background-color: #e9ecef;" placeholder="             내 예산에 맞는 방 찾기">
-		</div>
-
-
-		<div class="header_cart">
-
-			<img src="common/images/trolley.png" height="30px" />
-
-		</div>
-
-		<div class="header_logIn">
-			<a class="header_logIn_item"> 로그인 </a> <a class="header_logIn_item">
-				회원가입 </a>
-		</div>
-	</div>
-
-	<hr>
+<body onload="init()">
+	<!-- 헤더부분 -->
+	<div id="header"></div>
 
 	<!-- 팔방 상세 페이지  -->
 
 	<div class="palbang_detail_main">
 		<div class="palbang_detail_edit">
-			<img src="common/images/heart.png">
-			<a class="palbang_detail_edit_update">수정</a>
-			<a class="palbang_detail_edit_delete">삭제</a>
+			<!-- <img id="heart_img" src="common/images/heart.png" alt="하트"/> -->
+			<svg style="margin-top:5px; color:red;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+				<path d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+			</svg>
+			<a class="palbang_detail_edit_update" href="#" onclick="location.href='palbang_update.html'">수정</a>
+			<a class="palbang_detail_edit_delete" href="#" onclick="location.href='palbang_main.html'">삭제</a>
 
 		</div>
 
@@ -213,47 +218,9 @@
 		</div>
 
 	</div>
+<!-- 풋터부분 -->
+<div id="footer"></div>
 
-	<!-- 풋터 -->
-	<footer>
-		<div class="footer_top">
-			<div class="footer_name">
-				<h3>사방팔방 이야기</h3>
-			</div>
-			<div class="footer_sns">
-				<a class="footer_icon" href="https://www.instagram.com/"> <img src="common/images/instagram.png"
-						width="30" height="30" />
-				</a> <a class="footer_icon" href="https://www.facebook.com/"> <img src="common/images/facebook.png"
-						width="30" height="30" />
-				</a>
-			</div>
-		</div>
-
-		<hr />
-		<div class="footer_info">
-			<table>
-				<tbody>
-					<tr>
-						<td>상호명:</td>
-						<td colspan="3">사방팔방</td>
-					</tr>
-					<tr>
-						<td>문의하기:</td>
-						<td>2조</td>
-						<td>이종현</td>
-						<td>조민상</td>
-						<td>이채정</td>
-					</tr>
-					<tr>
-						<td>주소:</td>
-						<td colspan="3">서울특별시 송파구 중대로 135, 서관12층</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<p class="footer_copyright">Copyright Ⓒ 2021 4bang8bang. All
-			rights reserved</p>
-	</footer>
 </body>
 
 </html>

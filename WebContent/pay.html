@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제 페이지</title>
+
+    <link rel="stylesheet" href="common/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="common/css/main_4989.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="common/jquery/jquery-3.5.1.min.js"></script>
+    <script src="common/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="common/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    
+   
+    <style>
+
+        .pay_content{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .pay_content_left{
+            flex-basis: 68%;
+            border-right: 1px solid grey;
+        }
+        .pay_content_right{
+            flex-basis: 32%;
+            
+        }
+        .pay_header{
+            font-size: 2em;
+            margin-top: 2.2%;
+            border-bottom: 1px solid grey;
+        }
+        .pay_header > div{
+            margin-left: 6%; 
+            margin-bottom: 2%;
+        }
+
+
+        .pay_content_left_delivery_header{
+            font-size: 1.4em;
+            margin-top: 1.5%;
+            margin-left: 9%;
+        }
+
+        .pay_content_left_delivery_content_select{
+            display: flex;
+            flex-direction: row;
+            font-size: 1.4em;
+            margin-top: 2%;
+            margin-left: 12%;
+           
+        }
+
+        .pay_content_left_delivery_content_select_1{
+            
+            margin-right: 8%;
+            padding: 3px;
+           
+        }
+
+        .pay_content_left_delivery_content_select_2{
+           
+           padding: 3px;
+           
+        }
+
+        .pay_content_left_delivery_content_select_1 > input{
+            
+            margin-bottom: 3%;
+           
+        }
+
+
+        .pay_content_left_delivery_content_select_1 > label{
+            display: inline-block;
+            margin-left: 25px;
+            
+            
+            
+        }
+
+        .pay_content_left_delivery_content_select_2 > input{
+            
+            margin-bottom: 3%;
+           
+        }
+
+        .pay_content_left_delivery_content_select_2 > label{
+            display: inline-block;
+            margin-left: 25px;
+            margin-bottom: 5%;
+            
+           
+           
+        }
+
+        .pay_content_left_delivery_content_address{
+            font-size: 1.2em;
+            margin-left: 9%;
+        }
+
+        .pay_content_left_way_header{
+            margin-top: 5%;
+            margin-left: 9%;
+            font-size: 1.2em;
+            margin-bottom: 2%;
+        }
+
+
+        .pay_content_left_way_content_select{
+            width: 1000px;
+            margin-left: 8%;
+            margin-bottom: 1%;
+        }
+
+        
+
+       
+        .pay_content_left_way_content_bank_1{
+            padding-left: 1%;
+            margin-left: 8%;
+            margin-right: 5%;
+            
+        }
+        #bank_default_image{
+            border: 2.7px solid #00B0F0;
+        }
+        .pay_content_left_way_content_bank_2{
+            margin-left: 4.5%;
+            
+            border-top: 0.1px solid grey;
+            border-left: 0.1px solid grey;
+        }
+        
+      
+
+        .pay_content_right_content{
+            margin-left: 9%;
+        }
+
+
+        .pay_content_right_content_1{
+            font-size: 1.6em;
+            margin-top: 5%;
+            margin-bottom: 12%;
+        }
+
+        .pay_content_right_content_2{
+            display: flex;
+            flex-direction: row;
+            
+        }
+        .pay_content_right_content_2 > div {
+            margin-left: 10%;
+            margin-top: 9%;
+            font-size: 1.4em;
+        }
+
+        .pay_content_right_content_3{
+            display: flex;
+            flex-direction: row;
+            
+        }
+
+        .content_3_1{
+            margin-right: 15%;
+            margin-top: 3%;
+        }
+
+        .content_3_1 > div{
+            padding: 5px;
+        }
+
+        .content_3_2{
+            margin-top: 3%;
+            margin-right: 15%;
+        }
+
+        .content_3_2 > div{
+            padding: 5px;
+        }
+
+        .content_3_3{
+            margin-top: 2.8%;
+        }
+        .content_3_3 > div{
+            padding: 4px;
+        }
+
+        .pay_content_right_content_4{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-size: 1.4em;
+            padding: 5px;
+            margin-top: 8%;
+            margin-left: 2%;
+            margin-bottom: 7%;
+        }
+       
+        .content_4_1{
+            margin-left: 22%;
+        }
+        .content_4_2{
+            margin-right: 7%;
+        }
+        a:hover{
+	color: black;
+}
+    </style>
+<script>
+    const init = () => {
+          $.ajax({url:"header.html"})
+          .done((data) => {
+             const content = $("#header");
+             content.html(data);
+          }).fail((error) => { 
+              console.log("에러발생");
+              console.log(error);
+             });
+
+          $.ajax({url:"footer.html"})
+          .done((data) => {
+             const content = $("#footer");
+             content.html(data);
+          }).fail((error) => { 
+              console.log("에러발생");
+              console.log(error);
+             });
+
+      };
+</script>
+</head>
+<body onload="init()">
+	<!-- 헤더부분 -->
+	<div id="header"></div>
+
+<!-- 메인 결제부분 -->
+
+    <div class="pay_main">
+        
+        <div class="pay_header">
+            <div>주문결제</div>
+        </div>
+        
+        <div class="pay_content">
+            <div class="pay_content_left">
+                <div class="pay_content_left_delivery">
+                    <div class="pay_content_left_delivery_header">
+                        배송정보
+                    </div>
+                    <hr/>
+                    <div class="pay_content_left_delivery_content">
+                        <div class="pay_content_left_delivery_content_select">
+                            <div class="pay_content_left_delivery_content_select_1" onclick="document.querySelector('.pay_content_left_delivery_content_select_1').style.color='black';">
+                                <input id="id1" type="radio" name="name" value="default_location" style="width:30px; height:30px; vertical-align: -5px;" checked><label for="id1"
+                                >기본배송지</label>
+                                
+                            </div>
+                            <div class="pay_content_left_delivery_content_select_2" onclick="document.querySelector('.pay_content_left_delivery_content_select_2').style.color='black';">    
+                               <input id="id2" type="radio" name="name" value="direct_input" style="width:30px; height:30px; vertical-align: -5px;"><label for="id2"
+                              >직접입력</label>
+                                
+                            </div>    
+                        </div>
+                        <hr/>
+                        <div class="pay_content_left_delivery_content_address">
+                            조민상</br>
+                            경기도 의정부시 오목로 252, 휴스토리 202동 1004호</br>
+                            010-8550-7078
+                           
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="pay_content_left_way">
+                    <div class="pay_content_left_way_header">
+                        결제방법
+                    </div>
+                    <hr/>
+                    <div class="pay_content_left_way_content">
+                        <div class="pay_content_left_way_content_select btn-group btn-group-lg">
+                            <button type="button" class="btn btn-outline-info">카드 결제</button>
+                        
+                      
+                            <button type="button" class="btn btn-outline-secondary">무통장 입금</button>
+                            
+                          
+                            <button type="button" class="btn btn-outline-secondary">휴대폰 결제</button>
+                            
+                        </div>
+                        
+                            <div class="pay_content_left_way_content_bank_1">
+                                <img id="bank_default_image" src="common/images/bank_kb.png"/>
+                                <img src="common/images/bank_samsung.png"/>
+                                <img src="common/images/bank_hyundai.png"/>
+                                <img src="common/images/bank_shinhan.png"/>
+                                <img src="common/images/bank_lotte.png"/>
+                                <img src="common/images/bank_nh.png"/>
+                                <img src="common/images/bank_bc.png"/>
+                                <img src="common/images/bank_citi.png"/>
+                                <img src="common/images/bank_kakao.png"/>
+                                <img src="common/images/bank_sc.png"/>
+                                <img src="common/images/bank_hana.png"/>
+                                <img src="common/images/bank_uri.png"/>
+                            </div>
+                          
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="pay_content_right">
+                <div class="pay_content_right_header"></div>
+                <div class="pay_content_right_content">
+                    <div class="pay_content_right_content_1">주문상품 정보</div> 
+                    <div class="pay_content_right_content_2">
+                        <img src="common/images/sb1_0.png" width="150"/>
+                        <div>아늑하고 따뜻한 방</div>
+                    </div>
+                    <div class="pay_content_right_content_3">
+                        
+                            <div class="content_3_1">
+                               <div>스카르스타</div>
+                               <div>크란스크라게</div>
+                               <div>글라돔</div>
+                               <div>테르티알</div>
+                            </div>
+                            <div class="content_3_2">
+                               <div><text style="font-family: 'Cafe24Dangdanghae';">&#8361;</text> 150,000</div>
+                               <div><text style="font-family: 'Cafe24Dangdanghae';">&#8361;</text> 50,000</div>
+                               <div><text style="font-family: 'Cafe24Dangdanghae';">&#8361;</text> 100,000</div>
+                               <div><text style="font-family: 'Cafe24Dangdanghae';">&#8361;</text> 50,000</div>
+                            </div>
+                            <div class="content_3_3">
+                               <div>
+                                  <img src="common/images/sb1_5.png">
+                               </div>
+                               <div>
+                                  <img src="common/images/sb1_5.png">
+                               </div>
+                               <div>
+                                  <img src="common/images/sb1_5.png">
+                               </div>
+                               <div>
+                                  <img src="common/images/sb1_5.png">
+                               </div>
+                            </div>             
+
+                    </div>
+                    <div class="pay_content_right_content_4">
+                        <div class="content_4_1">총 합계</div>
+                        <div class="content_4_2"><text style="font-family: 'Cafe24Dangdanghae';">&#8361;</text> 350,000</div>
+                    </div>
+                    <a href="#" onclick="location.href='pay_success.html'">
+                        <button type="button" class="btn btn-lg btn-info" style="width: 82%; height: 30%; color:white">결제하기</button>
+                    </a>
+                    <a href="#" onclick="location.href='shopping_basket.html'">
+                        <button type="button" class="btn btn-lg btn-light" style="width: 82%; height: 30%; color:black">취소하기</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- 풋터부분 -->
+<div id="footer"></div>
+
+
+</body>
+</html>

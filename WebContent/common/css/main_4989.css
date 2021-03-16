@@ -7,11 +7,23 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Cafe24Dangdanghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /* 전체 스타일 폰트 */
 * {
 	font-family: "Wemakeprice-Regular";
 }
-
+a {
+	color: black!important;
+	text-decoration:none!important;
+}
+a:hover{
+	color: black!important;
+}
 /* header css */
 
 
